@@ -38,7 +38,7 @@ import org.apache.uima.util.XMLInputSource;
  */
 public class SimpleRunCPE extends Thread {
   /**
-   * The CPE instance. Fuck yeah. 
+   * The CPE instance.
    */
   private CollectionProcessingEngine mCPE;
 
