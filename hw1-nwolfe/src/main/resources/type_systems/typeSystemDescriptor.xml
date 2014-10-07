@@ -13,7 +13,7 @@
     <features>
         <featureDescription>
           <name>sentenceId</name>
-          <description>The actual ID of the motha fuckin string</description>
+          <description>The actual ID of the string</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
       </features>
