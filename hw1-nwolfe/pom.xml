@@ -126,6 +126,6 @@
 	<scm>
 		<connection>scm:git:git@github.com:nikwolfe7/hw1-nwolfe.git</connection>
 		<developerConnection>scm:git:git@github.com:nikwolfe7/hw1-nwolfe.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>hw1-nwolfe-0.0.3</tag>
 	</scm>
 </project>
