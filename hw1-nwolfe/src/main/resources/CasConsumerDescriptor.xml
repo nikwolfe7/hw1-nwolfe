@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<casConsumerDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <implementationName>type.SimpleNERCasConsumer</implementationName>
+  <processingResourceMetaData>
+    <name>casConsumerDescriptor</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters>
+      <configurationParameter>
+        <name>outputFile</name>
+        <description>File to write output to...</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>outputFile</name>
+        <value>
+          <string>hw1-nwolfe.out</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import name="type_systems.typeSystemDescriptor"/>
+      </imports>
+    </typeSystemDescription>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>false</modifiesCas>
+      <multipleDeploymentAllowed>false</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </processingResourceMetaData>
+  <resourceManagerConfiguration/>
+</casConsumerDescription>

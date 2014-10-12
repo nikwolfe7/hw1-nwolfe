@@ -1,1 +1,57 @@
-qre
+<?xml version="1.0" encoding="UTF-8"?>
+<cpeDescription>
+<collectionReader>
+<collectionIterator>
+<descriptor>
+<import name="CollectionReaderDescriptor"/>
+</descriptor>
+</collectionIterator>
+</collectionReader>
+<casProcessors casPoolSize="1"
+processingUnitThreadCount="1">
+
+<casProcessor deployment="integrated" name="ABNER" >
+<descriptor>
+<import name="NamedEntityAnalysisEngineDescriptor"/>
+</descriptor>
+<filter></filter>
+<errorHandling>
+<maxConsecutiveRestarts action="terminate"
+value="100"/>
+<errorRateThreshold action="terminate" value="10/10000"/>
+<timeout max="10000"/>
+</errorHandling>
+</casProcessor>
+
+<casProcessor deployment="integrated" name="NER" >
+<descriptor>
+<import name="AbnerAnalysisEngineDescriptor"/>
+</descriptor>
+<filter></filter>
+<errorHandling>
+<maxConsecutiveRestarts action="terminate"
+value="100"/>
+<errorRateThreshold action="terminate" value="10/10000"/>
+<timeout max="10000"/>
+</errorHandling>
+</casProcessor>
+
+<casProcessor deployment="integrated" name="CasConsumer" >
+<descriptor>
+<import name="CasConsumerDescriptor"/>
+</descriptor>
+<filter></filter>
+<errorHandling>
+<maxConsecutiveRestarts action="terminate"
+value="100"/>
+<errorRateThreshold action="terminate" value="10/10000"/>
+<timeout max="10000"/>
+</errorHandling>
+</casProcessor>
+
+</casProcessors>
+<cpeConfig>
+        <numToProcess>-1</numToProcess>
+        <deployAs>immediate</deployAs>
+</cpeConfig>
+</cpeDescription>
