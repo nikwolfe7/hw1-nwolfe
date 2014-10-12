@@ -13,8 +13,9 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
-/** A gene or protein mention within the text to be annotated
- * Updated by JCasGen Wed Oct 01 16:13:53 EDT 2014
+/** A gene or protein mention within the text to be
+        annotated
+ * Updated by JCasGen Sun Oct 12 02:56:50 EDT 2014
  * @generated */
 public class Gene_Type extends Annotation_Type {
   /** @generated 

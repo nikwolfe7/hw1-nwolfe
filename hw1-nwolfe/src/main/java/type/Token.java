@@ -10,9 +10,10 @@ import org.apache.uima.jcas.cas.TOP_Type;
 import org.apache.uima.jcas.tcas.Annotation;
 
 
-/** An individual word token within a text separated by spaces and assigned with a part of speech. 
- * Updated by JCasGen Wed Oct 01 16:13:53 EDT 2014
- * XML source: /home/nwolfe/git/hw1-nwolfe/hw1-nwolfe/src/main/resources/type_systems/typeSystemDescriptor.xml
+/** An individual word token within a text separated by
+        spaces and assigned with a part of speech.
+ * Updated by JCasGen Sun Oct 12 02:56:50 EDT 2014
+ * XML source: /home/nwolfe/git/hw1-nwolfe/hw1-nwolfe/src/main/resources/NamedEntityAnalysisEngineDescriptor.xml
  * @generated */
 public class Token extends Annotation {
   /** @generated
@@ -79,7 +80,7 @@ public class Token extends Annotation {
   //*--------------*
   //* Feature: wordToken
 
-  /** getter for wordToken - gets An individual word in the text. 
+  /** getter for wordToken - gets An individual word in the text.
    * @generated
    * @return value of the feature 
    */
@@ -88,7 +89,7 @@ public class Token extends Annotation {
       jcasType.jcas.throwFeatMissing("wordToken", "type.Token");
     return jcasType.ll_cas.ll_getStringValue(addr, ((Token_Type)jcasType).casFeatCode_wordToken);}
     
-  /** setter for wordToken - sets An individual word in the text.  
+  /** setter for wordToken - sets An individual word in the text. 
    * @generated
    * @param v value to set into the feature 
    */
@@ -101,7 +102,7 @@ public class Token extends Annotation {
   //*--------------*
   //* Feature: tagPOS
 
-  /** getter for tagPOS - gets The part of speech of the wordToken 
+  /** getter for tagPOS - gets The part of speech of the wordToken
    * @generated
    * @return value of the feature 
    */
@@ -110,7 +111,7 @@ public class Token extends Annotation {
       jcasType.jcas.throwFeatMissing("tagPOS", "type.Token");
     return jcasType.ll_cas.ll_getStringValue(addr, ((Token_Type)jcasType).casFeatCode_tagPOS);}
     
-  /** setter for tagPOS - sets The part of speech of the wordToken  
+  /** setter for tagPOS - sets The part of speech of the wordToken 
    * @generated
    * @param v value to set into the feature 
    */

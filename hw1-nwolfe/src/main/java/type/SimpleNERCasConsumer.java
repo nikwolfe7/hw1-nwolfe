@@ -1,0 +1,70 @@
+package type;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.apache.uima.UIMA_IllegalArgumentException;
+import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.cas.CAS;
+import org.apache.uima.cas.FSIterator;
+import org.apache.uima.collection.CasConsumer_ImplBase;
+import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.cas.TOP;
+import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.uima.resource.ResourceProcessException;
+import org.apache.uima.jcas.tcas.Annotation;
+
+public class SimpleNERCasConsumer extends CasConsumer_ImplBase {
+
+  private PrintStream writer;
+
+  @Override
+  public void initialize() throws ResourceInitializationException {
+    try {
+      this.writer = new PrintStream(new File(getConfigParameterValue("outputFile").toString()));
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+      throw new UIMA_IllegalArgumentException();
+    }
+  };
+
+  @Override
+  public void destroy() {
+    this.writer.flush();
+    this.writer.close();
+  };
+
+  @Override
+  public void processCas(CAS aCAS) throws ResourceProcessException {
+    try {
+      JCas jCas = aCAS.getJCas();
+      FSIterator<TOP> fsIterator = jCas.getJFSIndexRepository().getAllIndexedFS(Sentence.type);
+      if (fsIterator.hasNext()) {
+        Sentence sentence = (Sentence) fsIterator.next();
+        String sentenceId = sentence.getSentenceId();
+        // Divide annotations into lists...
+        Iterable<Annotation> iter = jCas.getAnnotationIndex(Gene.type);
+        for (Annotation a : iter) {
+          Gene nea = (Gene) a;
+          Integer begin = nea.getBegin();
+          Integer end = nea.getEnd();
+          String namedEntity = nea.getGeneContentString();
+          String output = sentenceId + "|" + begin.toString() + " " + end.toString() + "|"
+                  + namedEntity;
+          this.writer.println(output);
+        }
+      }
+      /**
+       * edu.cmu.deiis.types.NamedEntityAnalysisEngine edu.cmu.deiis.types.AbnerAnalysisEngine
+       */
+    } catch (Exception e) {
+      e.printStackTrace();
+      throw new AnalysisEngineProcessException();
+    }
+
+  }
+
+}

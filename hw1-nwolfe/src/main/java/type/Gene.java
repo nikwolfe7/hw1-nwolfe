@@ -10,9 +10,10 @@ import org.apache.uima.jcas.cas.TOP_Type;
 import org.apache.uima.jcas.tcas.Annotation;
 
 
-/** A gene or protein mention within the text to be annotated
- * Updated by JCasGen Wed Oct 01 16:13:53 EDT 2014
- * XML source: /home/nwolfe/git/hw1-nwolfe/hw1-nwolfe/src/main/resources/type_systems/typeSystemDescriptor.xml
+/** A gene or protein mention within the text to be
+        annotated
+ * Updated by JCasGen Sun Oct 12 02:56:50 EDT 2014
+ * XML source: /home/nwolfe/git/hw1-nwolfe/hw1-nwolfe/src/main/resources/NamedEntityAnalysisEngineDescriptor.xml
  * @generated */
 public class Gene extends Annotation {
   /** @generated

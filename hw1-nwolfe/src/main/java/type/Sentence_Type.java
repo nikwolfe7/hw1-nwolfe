@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.TOP_Type;
 
 /** Identifier for the sentence being annotated.
- * Updated by JCasGen Wed Oct 01 16:13:53 EDT 2014
+ * Updated by JCasGen Sun Oct 12 02:56:50 EDT 2014
  * @generated */
 public class Sentence_Type extends TOP_Type {
   /** @generated 
@@ -69,6 +69,30 @@ public class Sentence_Type extends TOP_Type {
     ll_cas.ll_setStringValue(addr, casFeatCode_sentenceId, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_sentenceText;
+  /** @generated */
+  final int     casFeatCode_sentenceText;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public String getSentenceText(int addr) {
+        if (featOkTst && casFeat_sentenceText == null)
+      jcas.throwFeatMissing("sentenceText", "type.Sentence");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_sentenceText);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setSentenceText(int addr, String v) {
+        if (featOkTst && casFeat_sentenceText == null)
+      jcas.throwFeatMissing("sentenceText", "type.Sentence");
+    ll_cas.ll_setStringValue(addr, casFeatCode_sentenceText, v);}
+    
+  
 
 
 
@@ -84,6 +108,10 @@ public class Sentence_Type extends TOP_Type {
  
     casFeat_sentenceId = jcas.getRequiredFeatureDE(casType, "sentenceId", "uima.cas.String", featOkTst);
     casFeatCode_sentenceId  = (null == casFeat_sentenceId) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_sentenceId).getCode();
+
+ 
+    casFeat_sentenceText = jcas.getRequiredFeatureDE(casType, "sentenceText", "uima.cas.String", featOkTst);
+    casFeatCode_sentenceText  = (null == casFeat_sentenceText) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_sentenceText).getCode();
 
   }
 }
