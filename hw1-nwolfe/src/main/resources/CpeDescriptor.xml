@@ -10,22 +10,9 @@
 <casProcessors casPoolSize="1"
 processingUnitThreadCount="1">
 
-<casProcessor deployment="integrated" name="ABNER" >
+<casProcessor deployment="integrated" name="LingPipeNER" >
 <descriptor>
 <import name="NamedEntityAnalysisEngineDescriptor"/>
-</descriptor>
-<filter></filter>
-<errorHandling>
-<maxConsecutiveRestarts action="terminate"
-value="100"/>
-<errorRateThreshold action="terminate" value="10/10000"/>
-<timeout max="10000"/>
-</errorHandling>
-</casProcessor>
-
-<casProcessor deployment="integrated" name="NER" >
-<descriptor>
-<import name="AbnerAnalysisEngineDescriptor"/>
 </descriptor>
 <filter></filter>
 <errorHandling>
